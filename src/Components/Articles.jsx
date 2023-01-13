@@ -1,11 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import ArticleCard from "./ArticleCard";
-import Header from "./Header";
+import { Link } from "react-router-dom";
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [topic_slug, setTopic_slug] = useState("coding");
 
   function fetchArticles() {
     setIsLoading(true);
@@ -19,19 +20,27 @@ function Articles() {
 
   useEffect(() => {
     fetchArticles();
-  }, []);
+  }, [topic_slug]);
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div>
-      <h1>{Header}</h1>
-      {articles.map((article) => {
-        return <ArticleCard article={article} />;
-      })}
-    </div>
+    <ul>
+      <button onClick={() => setTopic_slug("coding")}>coding</button>
+      <button onClick={() => setTopic_slug("cooking")}>cooking</button>
+      <button onClick={() => setTopic_slug("football")}>football</button>
+      <div>
+        {articles.map((article) => {
+          return (
+            <Link to={`/article/${article.article_id}`}>
+              <ArticleCard article={article} />
+            </Link>
+          );
+        })}
+      </div>
+    </ul>
   );
 }
 
