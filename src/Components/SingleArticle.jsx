@@ -6,14 +6,12 @@ function SingleArticle() {
   const { articleId } = useParams();
   const [article, setArticle] = useState({});
   const [isLoading, setIsLoading] = useState(true);
-  // console.log(article);
 
   function fetchArticleById(articleId) {
     setIsLoading(true);
     return axios
       .get(`https://nc-news-api-izxs.onrender.com/api/articles/${articleId}`)
       .then(({ data }) => {
-        // console.log(data);
         return data.article;
       });
   }
