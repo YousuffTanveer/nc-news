@@ -5,6 +5,20 @@
   text-align: center;
 }
 
+/* header */
+header {
+  background-color: rgb(240, 74, 74);
+  width: 50%;
+  margin-top: 1.5em;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-bottom: 1.5em;
+  padding: 5px;
+  text-align: center;
+  justify-content: center;
+  border-radius: 30px;
+}
+
 body {
   background-color: #111;
   color: #fff;
@@ -19,21 +33,14 @@ body {
   margin-left: 15%;
   margin-right: 15%;
 }
+
 .Article-Card-Header {
   color: rgb(250, 75, 75);
   margin-top: 20px;
 }
 
-/* header */
-header {
-  background-color: rgb(240, 74, 74);
-  width: 50%;
-  margin-top: 1.5em;
-  margin-left: 25%;
-  margin-right: 25%;
-  margin-bottom: 1.5em;
-  padding: 5px;
-  text-align: center;
-  justify-content: center;
-  border-radius: 30px;
+/* single article page */
+.single-article-title {
+  color: rgb(240, 74, 74);
+  background-color: rgb(126, 121, 121);
 }

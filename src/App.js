@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import Nav from "./Components/Nav";
 import Articles from "./Components/Articles";
@@ -9,13 +9,12 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Nav /> */}
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Articles />} />
-          {/* <Route path="/article/:article_id" element={<SinlgeArticle />} /> */}
-        </Routes>
-      </BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Articles />} />
+        <Route path="/:articleId" element={<SinlgeArticle />} />
+        <Route path="/topic/:topic_slug" element={<Articles />} />
+      </Routes>
     </div>
   );
 }
